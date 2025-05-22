@@ -1,13 +1,12 @@
- 🏦 TRAVEL-BANK_Docker_v.2.0
-This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.
+# 🏦 TRAVEL-BANK_Docker_v.2.0
+
+This project, **TRAVEL-BANK_Docker_v.2.0**, is a continuation of **TRAVEL-BANK_Microservices_v.1.0**, with Docker support added.  
 In this version, Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 
 You can now build and run each service using Docker:
 
-🔧 Build Docker Image
-bash
-Copy
-Edit
+### 🔧 Build Docker Image
+```bash
 docker build . -t vinaysteja0231/accounts:v.2.0
 ▶️ Run Container (Foreground)
 bash
@@ -21,11 +20,12 @@ Edit
 docker run -d -p 8080:8080 vinaysteja0231/accounts:v.2.0
 Once the containers are up and running, you can access the services via Postman and browser as you would in a local setup.
 
- 🏦 TRAVEL BANK_Microservices_v.1.0
+🏦 TRAVEL BANK_Microservices_v.1.0
 TRAVEL BANK is a Spring Boot-based microservices application designed to simulate a simplified banking platform.
-It consists of three core microservices that handle Accounts, Cards, and Loans functionalities. Each service is built with Spring Boot, Spring Data JPA, H2 database, and includes validations and exception handling for robust and secure development.
+It consists of three core microservices that handle Accounts, Cards, and Loans functionalities.
+Each service is built with Spring Boot, Spring Data JPA, H2 database, and includes validations and exception handling for robust and secure development.
 
- 🧩 Microservices Overview
+🧩 Microservices Overview
 1️⃣ Accounts Service
 Allows customer registration
 
@@ -86,11 +86,9 @@ TRAVEL-BANK.postman_collection.json
 It contains ready-to-use requests to test all available APIs for Accounts, Cards, and Loans.
 
 📸 Swagger UI and H2 Console
-📘 Swagger UI:
-http://localhost:8080/swagger-ui/index.html
+📘 Swagger UI: http://localhost:8080/swagger-ui/index.html
 
-💾 H2 Database Console:
-http://localhost:8080/h2-console
+💾 H2 Database Console: http://localhost:8080/h2-console
 
 📈 Future Enhancements
 🔄 Add Kafka for inter-service communication
@@ -100,3 +98,7 @@ http://localhost:8080/h2-console
 📊 Use ELK (Elasticsearch, Logstash, Kibana) for logging and monitoring
 
 🐳 Extend Docker setup for multi-service orchestration
+
+vbnet
+Copy
+Edit
