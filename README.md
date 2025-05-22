@@ -1,7 +1,7 @@
-# 🏦 TRAVEL BANK - Microservices Project
+# 🏦 TRAVEL-BANK_Docker_v.2.0
 
+This project, **TRAVEL-BANK_Docker_v.2.0**, is a continuation of **TRAVEL-BANK_Microservices_v.1.0**, with Docker support added. In this version, Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 TRAVEL BANK is a Spring Boot-based microservices application designed to simulate a simplified banking platform. It consists of three core microservices that handle **Accounts**, **Cards**, and **Loans** functionalities. Each service is built with **Spring Boot**, **Spring Data JPA**, **H2 database**, and includes **validations** and **exception handling** for robust and secure development.
-
 ---
 ![Alt text]()
 ## 🧩 Microservices Overview
