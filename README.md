@@ -4,6 +4,9 @@
 This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.  
 In this version, Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 
+![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/master/screenshots-v.2.0/Screenshot%20(117).png?raw=true)
+
+
 You can now build and run each service using Docker:
 
 ### 🔧 Build Docker Image
