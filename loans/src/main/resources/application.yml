@@ -1,4 +1,6 @@
 #localhost:8090/h2-console--for access h2 database
+#web-allow-others: true — allows access from outside localhost (remote connections),
+#when it is uploded in docker.
 server:
   port: 8090
 spring:
