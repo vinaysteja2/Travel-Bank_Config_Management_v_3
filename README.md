@@ -2,9 +2,14 @@
 # 🏦 TRAVEL-BANK_Docker_v.2.0
 
 This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.  
-In this version v2.1, BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
+In this version v2.2,GoogleJib BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 
-![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/master/Screenshots-buildpacks_v2.1/Screenshot%20(124).png?raw=true)
+![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/feature/GooglgJib-enhancements/ScreenShots-GoogleJib-v2.2/Screenshot%20(125).png?raw=true)
+
+### 🔧 Build Docker Image using GoogleJib
+```bash
+mvn compile jib:Dockerbuild
+```
 
 ### 🔧 Build Docker Image using BuildPacks
 ```bash
@@ -74,6 +79,7 @@ It consists of three core microservices that handle Accounts, Cards, and Loans f
 - ✅ Postman collection included for easy testing  
 - ✅ Docker containerization for deployment  using dockerfiles
 - ✅ Docker containerization for deployment   using BuildPacks
+- ✅ Docker containerization for deployment   using GoogleJib
 
 ## 📂 Postman Collection
 
