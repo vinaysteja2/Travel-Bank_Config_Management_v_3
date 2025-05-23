@@ -2,14 +2,19 @@
 # 🏦 TRAVEL-BANK_Docker_v.2.0
 
 This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.  
-In this version, Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
+In this version v2.1, BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 
-![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/master/screenshots-v.2.0/Screenshot%20(116).png?raw=true)
+![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/master/Screenshots-buildpacks_v2.1/Screenshot%20(124).png?raw=true)
+
+### 🔧 Build Docker Image using BuildPacks
+```bash
+mvn spring-boot:build-image
+```
 
 
 You can now build and run each service using Docker:
 
-### 🔧 Build Docker Image
+### 🔧 Build Docker Image using Dockerfiles
 ```bash
 docker build . -t vinaysteja0231/accounts:v.2.0
 ```
@@ -67,7 +72,8 @@ It consists of three core microservices that handle Accounts, Cards, and Loans f
 - ✅ In-memory H2 DB for quick testing  
 - ✅ Swagger UI for interactive API docs  
 - ✅ Postman collection included for easy testing  
-- ✅ Docker containerization for deployment  
+- ✅ Docker containerization for deployment  using dockerfiles
+- ✅ Docker containerization for deployment   using BuildPacks
 
 ## 📂 Postman Collection
 
