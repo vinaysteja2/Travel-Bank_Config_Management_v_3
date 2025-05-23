@@ -101,6 +101,16 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <to>
+                        <image>vinaysteja0231/${project.artifactId}:v2.2</image>
+                    </to>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
