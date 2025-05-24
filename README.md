@@ -2,9 +2,19 @@
 # 🏦 TRAVEL-BANK_Docker_v.2.0
 
 This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.  
-In this version v2.2,GoogleJib BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
+In this version v2.2 Docker composefile,GoogleJib BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
 
 ![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/feature/GooglgJib-enhancements/ScreenShots-GoogleJib-v2.2/Screenshot%20(125).png?raw=true)
+
+added docker compse file in accounts microservice
+### 🔧 Build Docker Compose command for running
+```bash
+docker compose up -d
+```
+### 🔧 Build Docker Compose for removing
+```bash
+docker compose down
+```
 
 ### 🔧 Build Docker Image using GoogleJib
 ```bash
