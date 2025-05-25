@@ -1,111 +1,153 @@
 
-# 🏦 TRAVEL-BANK_Docker_v.2.0
+# 🏦 Travel Bank – Config Management (v3)
 
-This project, TRAVEL-BANK_Docker_v.2.0, is a continuation of TRAVEL-BANK_Microservices_v.1.0, with Docker support added.  
-In this version v2.2 Docker composefile,GoogleJib BuildPacks and Dockerfiles have been included for each microservice, enabling containerization and smoother deployment.
-
-![Alt text](https://github.com/vinaysteja2/TRAVEL-BANK_Docker_v.2.0/blob/feature/GooglgJib-enhancements/ScreenShots-GoogleJib-v2.2/Screenshot%20(125).png?raw=true)
-
-added docker compse file in accounts microservice
-### 🔧 Build Docker Compose command for running
-```bash
-docker compose up -d
-```
-### 🔧 Build Docker Compose for removing
-```bash
-docker compose down
-```
-
-### 🔧 Build Docker Image using GoogleJib
-```bash
-mvn compile jib:Dockerbuild
-```
-
-### 🔧 Build Docker Image using BuildPacks
-```bash
-mvn spring-boot:build-image
-```
-
-
-You can now build and run each service using Docker:
-
-### 🔧 Build Docker Image using Dockerfiles
-```bash
-docker build . -t vinaysteja0231/accounts:v.2.0
-```
-
-### ▶️ Run Container (Foreground)
-```bash
-docker run -p 8080:8080 vinaysteja0231/accounts:v.2.0
-```
-
-### ▶️ Run Container (Detached Mode)
-```bash
-docker run -d -p 8080:8080 vinaysteja0231/accounts:v.2.0
-```
-
-Once the containers are up and running, you can access the services via Postman and browser as you would in a local setup.
+This repository is dedicated to **configuration management** for the `Travel Bank` microservices application. It is designed to support scalable, cloud-native architecture using **Spring Boot configuration best practices**.
 
 ---
 
-# 🏦 TRAVEL BANK - Microservices Platform
+## 📌 Project Continuity
 
-TRAVEL BANK is a Spring Boot-based microservices application designed to simulate a simplified banking platform.  
-It consists of three core microservices that handle Accounts, Cards, and Loans functionalities. Each service is built with Spring Boot, Spring Data JPA, H2 database, and includes validations and exception handling for robust and secure development.
+This repository continues from:
+- `TRAVEL-BANK_Microservices_v.1.0`
+- `TRAVEL-BANK_Docker_v.2.0`
 
-## 🧩 Microservices Overview
+The current version, **`v3.0`**, focuses on **centralized configuration management**, making the services more maintainable and scalable.
 
-### 1️⃣ Accounts Service
-- Allows customer registration  
-- Creates a new bank account during registration  
-- Supports full CRUD operations  
-- Includes validations and global exception handling  
+---
 
-### 2️⃣ Cards Service
-- Enables customers to apply for credit or debit cards  
-- Manages card issuance and details  
-- Provides create, update, fetch, and delete APIs  
+## 🧰 Configuration Management in Spring Boot
 
-### 3️⃣ Loans Service
-- Customers can apply for loans and track loan details  
-- Full CRUD functionality for loan records  
+Spring Boot supports multiple ways to read application properties. Here’s a breakdown of the most commonly used approaches:
+
+### 1️⃣ Using `@Value`
+Inject individual property values directly into Spring Beans.
+```java
+@Value("${property.name}")
+private String propertyValue;
+```
+
+### 2️⃣ Using `Environment`
+Use the Environment interface to programmatically fetch property values.
+```java
+@Autowired
+private Environment environment;
+
+public void getProperty() {
+    String propertyValue = environment.getProperty("property.name");
+}
+```
+
+### 3️⃣ Using `@ConfigurationProperties` ✅ *Recommended*
+Bind groups of related properties to a POJO class.
+```java
+@ConfigurationProperties(prefix = "prefix")
+public class MyConfig {
+    private String property;
+    // getters and setters
+}
+```
+
+This avoids hardcoding keys and improves maintainability.
+
+---
+
+## 🐳 Docker Support (From v2.0)
+
+Each microservice in the Travel Bank ecosystem is fully containerized using Docker.
+
+### 🔧 Docker Compose
+```bash
+# Start all services
+docker compose up -d
+
+# Stop all services
+docker compose down
+```
+
+### 🔧 Build Docker Images
+
+| Method         | Command                                         |
+|----------------|--------------------------------------------------|
+| Google Jib     | mvn compile jib:dockerBuild                    |
+| Buildpacks     | mvn spring-boot:build-image                    |
+| Dockerfile     | docker build . -t <image-name>:<tag>           |
+
+### ▶️ Run Docker Containers
+```bash
+# Foreground
+docker run -p 8080:8080 vinaysteja0231/accounts:v2.0
+
+# Detached
+docker run -d -p 8080:8080 vinaysteja0231/accounts:v2.0
+```
+
+---
+
+## 🧩 Travel Bank - Microservices Overview
+
+A microservices-based banking platform built with Spring Boot.
+
+### ✅ Core Services
+
+| Service   | Features |
+|-----------|----------|
+| **Accounts** | Customer registration, account creation, validations, exception handling |
+| **Cards** | Card issuance, CRUD for cards |
+| **Loans** | Loan application, tracking, CRUD operations |
+
+---
 
 ## 🛠️ Tech Stack
-- ⚙️ Java 17+  
-- 🚀 Spring Boot 3.x  
-- 📦 Spring Data JPA  
-- 💾 H2 In-Memory Database  
-- 📘 Swagger (OpenAPI) for API Documentation  
-- 🧪 Postman for API Testing  
-- ☕ Maven for Dependency Management  
 
-## 📌 Features
-- ✅ Microservice architecture  
-- ✅ RESTful APIs with full CRUD operations  
-- ✅ Bean validations on input data  
-- ✅ Global exception handling  
-- ✅ In-memory H2 DB for quick testing  
-- ✅ Swagger UI for interactive API docs  
-- ✅ Postman collection included for easy testing  
-- ✅ Docker containerization for deployment  using dockerfiles
-- ✅ Docker containerization for deployment   using BuildPacks
-- ✅ Docker containerization for deployment   using GoogleJib
+- Java 17+
+- Spring Boot 3.x
+- Spring Data JPA
+- H2 Database
+- Swagger (OpenAPI)
+- Docker + Buildpacks + Jib
+- Maven
+- Postman
 
-## 📂 Postman Collection
+---
 
-🧪 You can find the Postman collection in the repository named:  
-**TRAVEL-BANK.postman_collection.json**
+## 🔍 API Testing & Docs
 
-It contains ready-to-use requests to test all available APIs for Accounts, Cards, and Loans.
+- 📘 **Swagger UI**: http://localhost:8080/swagger-ui/index.html  
+- 💾 **H2 Console**: http://localhost:8080/h2-console
 
-## 📸 Swagger UI and H2 Console
+---
 
-- 📘 Swagger UI: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)  
-- 💾 H2 Database Console: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)  
+## 🧪 Postman Collection
+
+A ready-to-use Postman collection is available here:
+
+📂 **File**: `TRAVEL-BANK.postman_collection.json`  
+🔹 Test all microservices from one place
+
+---
 
 ## 📈 Future Enhancements
 
-- 🔄 Add Kafka for inter-service communication  
-- 🌐 Integrate with API Gateway and Eureka  
-- 📊 Use ELK (Elasticsearch, Logstash, Kibana) for logging and monitoring  
-- 🐳 Extend Docker setup for multi-service orchestration  
+- 📡 Integrate Kafka for event-driven architecture
+- 🧭 API Gateway + Eureka Discovery
+- 📊 Logging & Monitoring with ELK Stack
+- 🐳 Docker Compose for full service orchestration
+
+---
+
+## 📚 Related Repositories
+
+- `travelbank-microservices`
+- `travelbank-docker`
+
+---
+
+## 🙌 Contribution
+
+Feel free to fork, raise issues, or submit pull requests. Feedback and improvements are always welcome!
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
