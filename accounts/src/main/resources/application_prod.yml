@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+
+build:
+  version: "1.0"
+#defalt=3.0, qa=2.0 and prod=1.0
+accounts:
+  message: "Welcome to TravelBank accounts related PROD APIs "
+  contactDetails:
+    name: "mounka - Product Owner"
+    email: "mounika@travelbank.com"
+  onCallSupport:
+    - (453) 555-1234
+    - (236) 523-1345

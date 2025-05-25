@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+
+build:
+  version: "2.0"
+#defalt=3.0, qa=2.0 and prod=1.0
+loans:
+  message: "Welcome to TravelBank loans related PROD APIs "
+  contactDetails:
+    name: "Lisha - Product Owner"
+    email: "lisha@travelbank.com"
+  onCallSupport:
+    - (953) 655-1234
+    - (836) 223-1345

@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+
+build:
+  version: "2.0"
+#defalt=3.0, qa=2.0 and prod=1.0
+cards:
+  message: "Welcome to TravelBank Cards related QA APIs "
+  contactDetails:
+    name: "mahitha - QA Lead"
+    email: "mahitha@travelbank.com"
+  onCallSupport:
+    - (111) 515-1234
+    - (333) 523-4345
