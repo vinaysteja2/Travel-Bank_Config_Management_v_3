@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+
+build:
+  version: "1.0"
+#defalt=3.0, qa=2.0 and prod=1.0
+loans:
+  message: "Welcome to TravelBank Loans related PROD APIs "
+  contactDetails:
+    name: "Alok - Product Owner"
+    email: "Alok@travelbank.com"
+  onCallSupport:
+    - (753) 995-1234
+    - (236) 523-1345

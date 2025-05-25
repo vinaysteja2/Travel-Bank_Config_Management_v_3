@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+
+build:
+  version: "1.0"
+#defalt=3.0, qa=2.0 and prod=1.0
+cards:
+  message: "Welcome to TravelBank Cards related PROD APIs "
+  contactDetails:
+    name: "yogesh - Product Owner"
+    email: "yogesh@travelbank.com"
+  onCallSupport:
+    - (353) 455-1234
+    - (136) 523-1345

@@ -19,12 +19,19 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+  profiles:
+    active:
+      - "qa"
     
 build:
-  version: "1.0"
+  version: "3.0"
 
 loans:
-  message: "Welcome to TravelBank loans related local APIs "
+  message: "Welcome to TravelBank Loans related local APIs "
   contactDetails:
     name: "Vinay Teja - Developer"
     email: "vinay@travelbank.com"

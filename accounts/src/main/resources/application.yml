@@ -19,9 +19,17 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+  profiles:
+    active:
+      - "prod"
+      
 build:
-  version: "1.0"
-
+  version: "3.0"
+#defalt=3.0, qa=2.0 and prod=1.0
 accounts:
   message: "Welcome to TravelBank accounts related local APIs "
   contactDetails:
