@@ -51,16 +51,66 @@ This avoids hardcoding keys and improves maintainability.
 
 ---
 
+## 🌐 Profiles in Spring Boot
+
+Spring provides a powerful tool called **profiles** to manage configuration for multiple environments like `dev`, `qa`, and `prod`. Profiles allow selective loading of properties and bean creation based on the environment.
+
+### ✅ Creating Profile-Specific Files
+
+- `application.properties` → Default profile
+- `application_qa.properties` → QA environment
+- `application_prod.properties` → Production environment
+
+### ✅ Activating a Profile
+
+```properties
+spring.profiles.active=prod
+```
+
+### ✅ Externalizing Configuration
+
+Spring Boot supports various methods to externalize configuration after the JAR is built:
+
+#### 1. Command-Line Arguments
+```bash
+java -jar accounts-service.jar --build.version="1.1"
+```
+
+#### 2. JVM System Properties
+```bash
+java -Dbuild.version="1.2" -jar accounts-service.jar
+```
+
+#### 3. Environment Variables
+Windows:
+```cmd
+env:BUILD_VERSION="1.3"; java -jar accounts-service.jar
+```
+Linux/macOS:
+```bash
+BUILD_VERSION="1.3" java -jar accounts-service.jar
+```
+
+Spring handles relaxed binding (e.g., `BUILD_VERSION` becomes `build.version`).
+
+### ❗ Drawbacks of Spring Boot Only Externalized Config
+
+1. Risk of manual errors due to CLI/JVM arguments
+2. Difficult to track/audit config changes
+3. Lack of granular access control with environment variables
+4. Challenges in managing config in distributed setups
+5. No built-in encryption for secrets
+6. Config reload without restart requires additional tools (e.g., Spring Cloud Config)
+
+---
+
 ## 🐳 Docker Support (From v2.0)
 
 Each microservice in the Travel Bank ecosystem is fully containerized using Docker.
 
 ### 🔧 Docker Compose
 ```bash
-# Start all services
 docker compose up -d
-
-# Stop all services
 docker compose down
 ```
 
@@ -74,10 +124,7 @@ docker compose down
 
 ### ▶️ Run Docker Containers
 ```bash
-# Foreground
 docker run -p 8080:8080 vinaysteja0231/accounts:v2.0
-
-# Detached
 docker run -d -p 8080:8080 vinaysteja0231/accounts:v2.0
 ```
 
