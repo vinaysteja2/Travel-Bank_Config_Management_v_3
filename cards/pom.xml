@@ -107,7 +107,7 @@
                 <version>3.4.2</version>
                 <configuration>
                     <to>
-                        <image>vinaysteja0231/${project.artifactId}:v2.2</image>
+                        <image>vinaysteja0231/${project.artifactId}:v3.0</image>
                     </to>
                 </configuration>
             </plugin>
