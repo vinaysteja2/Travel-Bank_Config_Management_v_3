@@ -1,5 +1,5 @@
 
-# 🏦 Travel Bank – Config Management with spring boot(v3)
+# 🏦 Travel Bank – Config Management with Spring Boot(v3)
 
 This repository is dedicated to **configuration management** for the `Travel Bank` microservices application. It is designed to support scalable, cloud-native architecture using **Spring Boot configuration best practices**.
 
